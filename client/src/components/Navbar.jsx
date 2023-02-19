@@ -1,20 +1,25 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav className="nav">
-      <a href="/" className="site-title">
+      <Link to="/" className="site-title">
         Improvement Center
-      </a>
+      </Link>
       <ul>
         <li>
-          <a href="/features">Features</a>
+          <Link to="/features">Features</Link>
         </li>
 
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
 
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
       {/* Dark theme 
