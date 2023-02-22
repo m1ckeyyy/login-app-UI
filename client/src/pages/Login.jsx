@@ -1,11 +1,47 @@
 import "./styles/Login.scss";
-
 export default function Login() {
+  let canClick = true;
+
+  const hoverEffect = (event) => {
+    // if (!canClick) return;
+
+    // canClick = false;
+    // setTimeout(() => {
+    //   canClick = true;
+    // }, 1000);
+
+    const letters = "ABCDEFGHIJKLMNOPQRSTWVUXYZ";
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iterations) {
+            return event.target.dataset.value[index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iterations >= 11) clearInterval(interval);
+      iterations += 1 / 3;
+    }, 30);
+  };
   return (
     <div className="container">
       <div className="login-left">
         <div className="login-header">
-          <h1>Welcome to Improvement</h1>
+          <h1
+            data-value="IMPROVEMENT"
+            className="improvement"
+            onMouseOver={hoverEffect}
+          >
+            IMPROVEMENT
+          </h1>
+          <h1 data-value="CENTER" className="center" onMouseOver={hoverEffect}>
+            CENTER
+          </h1>
           <p>
             Getting started is quick and simple, just fill out the info below!
           </p>
@@ -13,28 +49,28 @@ export default function Login() {
         <form className="login-form">
           <div className="login-form-content">
             <div className="form-item">
-              <label for="email">Enter Email</label>
+              <label>Enter Email</label>
               <input type="text" id="email" />
             </div>
-            <div className="form-item">
-              <label for="password">Enter Password</label>
+            <div className="form-item password">
+              <label>Enter Password</label>
               <input type="password" id="password" />
-            </div>
-            <div className="form-item">
               <div className="checkbox">
                 <input type="checkbox" id="rememberMeCheckbox" />
-                <label for="rememberMeCheckbox" className="checkboxLabel">
-                  Remember Me
-                </label>
+                <label className="checkboxLabel">Remember Me</label>
               </div>
             </div>
-            <button type="submit">Sign In</button>
+            <div className="buttons">
+              <button type="submit" className="submit-btn">
+                Sign In
+              </button>
+              <button className="create-account-btn">
+                <a className="create-account-href" href="/register">
+                  Create Account
+                </a>
+              </button>
+            </div>
           </div>
-
-          {/* <div className="login-form-footer">
-            <a href="#">a</a>
-            <a href="#">b</a>
-          </div> */}
         </form>
       </div>
       <div className="login-right">
