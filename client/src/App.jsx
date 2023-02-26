@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
-
+// on launch hacker animation every 7s
 function App() {
   return (
     <>

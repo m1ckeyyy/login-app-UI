@@ -1,15 +1,9 @@
 import "./styles/Login.scss";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+ 
 export default function Login() {
-  let canClick = true;
-
   const hoverEffect = (event) => {
-    // if (!canClick) return;
-
-    // canClick = false;
-    // setTimeout(() => {
-    //   canClick = true;
-    // }, 1000);
-
     const letters = "ABCDEFGHIJKLMNOPQRSTWVUXYZ";
     let iterations = 0;
 
@@ -28,6 +22,7 @@ export default function Login() {
       iterations += 1 / 3;
     }, 30);
   };
+
   return (
     <div className="container">
       <div className="login-left">
@@ -39,6 +34,7 @@ export default function Login() {
           >
             IMPROVEMENT
           </h1>
+
           <h1 data-value="CENTER" className="center" onMouseOver={hoverEffect}>
             CENTER
           </h1>
@@ -50,24 +46,27 @@ export default function Login() {
           <div className="login-form-content">
             <div className="form-item">
               <label>Enter Email</label>
-              <input type="text" id="email" />
+              <input type="text" id="email" autoFocus />
             </div>
             <div className="form-item password">
               <label>Enter Password</label>
               <input type="password" id="password" />
               <div className="checkbox">
                 <input type="checkbox" id="rememberMeCheckbox" />
-                <label className="checkboxLabel">Remember Me</label>
+                <label htmlFor="rememberMeCheckbox" className="checkboxLabel">
+                  Remember Me
+                </label>
               </div>
             </div>
             <div className="buttons">
+              <div className="line"></div>
               <button type="submit" className="submit-btn">
                 Sign In
               </button>
               <button className="create-account-btn">
-                <a className="create-account-href" href="/register">
+                <Link to="/register" className="create-account-href">
                   Create Account
-                </a>
+                </Link>
               </button>
             </div>
           </div>
