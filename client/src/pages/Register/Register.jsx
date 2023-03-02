@@ -1,14 +1,15 @@
-import "./Register.scss";
+// import styles from "./Register.scss";
+import React from "react";
+
 import { Link } from "react-router-dom";
 export default function Register() {
   return (
-    <div className="container">
-      <div className="login-left">
-        <div className="login-header">
+    <div className="register-container">
+      <div className="register-left">
+        <div className="register-header">
           <h1 data-value="IMPROVEMENT" className="improvement">
             IMPROVEMENT
           </h1>
-
           <h1 data-value="CENTER" className="center">
             CENTER
           </h1>
@@ -16,9 +17,9 @@ export default function Register() {
             Getting started is quick and simple, just fill out the info below!
           </p>
         </div>
-        <form className="login-form">
-          <div className="login-form-content">
-            <div className="form-item login">
+        <form className="register-form">
+          <div className="register-form-content">
+            <div className="form-item register">
               <label>Enter Email</label>
               <input type="text" id="email" autoFocus />
             </div>
@@ -46,7 +47,7 @@ export default function Register() {
           </div>
         </form>
       </div>
-      <div className="login-right">
+      <div className="register-right">
         <img src="images/register-frog.png" />
       </div>
     </div>
