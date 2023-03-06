@@ -5,42 +5,45 @@ import { Link } from "react-router-dom";
 
 export default function Register() {
 	return (
-		<div className="register-container">
-			<div className="register-left">
-				<div className="register-header">
-					<h1 data-value="IMPROVEMENT" className="improvement">
+		<div className={styles.container}>
+			<div className={styles["login-left"]}>
+				<div className={styles["login-header"]}>
+					<h1 data-value="IMPROVEMENT" className={styles.improvement}>
 						IMPROVEMENT
 					</h1>
-					<h1 data-value="CENTER" className="center">
+					<h1 data-value="CENTER" className={styles.center}>
 						CENTER
 					</h1>
 					<p>
 						Getting started is quick and simple, just fill out the info below!
 					</p>
 				</div>
-				<form className="register-form">
-					<div className="register-form-content">
-						<div className="form-item register">
+				<form className={styles["login-form"]}>
+					<div className={styles["login-form-content"]}>
+						<div className={`${styles["form-item"]} ${styles["email"]}`}>
 							<label>Enter Email</label>
 							<input type="text" id="email" autoFocus />
 						</div>
-						<div className="form-item password">
+						<div className={`${styles["form-item"]} ${styles["password"]}`}>
 							<label>Enter Password</label>
 							<input type="password" id="password" />
-							<div className="checkbox">
+							<div className={styles.checkbox}>
 								<input type="checkbox" id="rememberMeCheckbox" />
-								<label htmlFor="rememberMeCheckbox" className="checkboxLabel">
+								<label
+									htmlFor="rememberMeCheckbox"
+									className={styles.checkboxLabel}
+								>
 									Remember Me
 								</label>
 							</div>
 						</div>
-						<div className="buttons">
-							<div className="line"></div>
-							<button type="submit" className="submit-btn">
+						<div className={styles.buttons}>
+							<div className={styles.line}></div>
+							<button type="submit" className={styles["submit-btn"]}>
 								Sign In
 							</button>
-							<button className="create-account-btn">
-								<Link to="/login" className="create-account-href">
+							<button className={styles["login-btn"]}>
+								<Link to="/login" className={styles["login-href"]}>
 									Already a user?
 								</Link>
 							</button>
@@ -48,8 +51,8 @@ export default function Register() {
 					</div>
 				</form>
 			</div>
-			<div className="register-right">
-				<img src="images/register-frog.png" />
+			<div className={styles["login-right"]}>
+				<img src="images/frog1.png" />
 			</div>
 		</div>
 	);
