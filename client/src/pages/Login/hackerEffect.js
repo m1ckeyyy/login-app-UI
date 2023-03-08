@@ -20,9 +20,9 @@ const startEffect = (element) => {
   }, 30);
 };
 
-export const useHeaderEffect = () => {
+export const useHeaderEffect = (headers) => {
   useEffect(() => {
-    const headers = document.querySelectorAll(".login-header h1");
+    // const headers = document.querySelectorAll(".login-header h1");
     const intervals = [];
 
     headers.forEach((header, index) => {
